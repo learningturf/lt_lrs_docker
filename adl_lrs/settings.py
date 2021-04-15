@@ -10,7 +10,7 @@ PROJECT_ROOT = dirname(dirname(SETTINGS_DIR))
 DEBUG = True
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    # ('Samuel', 'samuel@learningturf.com'),
 )
 MANAGERS = ADMINS
 
@@ -18,11 +18,11 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'lrs',
-        'USER': '<db_owner_name>',
-        'PASSWORD': '<db_owner_password>',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
         'HOST': 'localhost',
-        'PORT': '',
-    }    
+        'PORT': '5432',
+    }
 }
 
 # Local time zone for this installation. Choices can be found here:
@@ -154,7 +154,7 @@ CACHES = {
     'attachment_cache':{
         'BACKEND':'django.core.cache.backends.db.DatabaseCache',
         'LOCATION':'attachment_cache',
-        'TIMEOUT': 86400,        
+        'TIMEOUT': 86400,
     },
 }
 
@@ -287,7 +287,7 @@ LOGGING = {
             'maxBytes': 1024*1024*5, # 5 MB
             'backupCount': 5,
             'formatter':'standard',
-        },  
+        },
         'request_handler': {
                 'level':'DEBUG',
                 'class':'logging.handlers.RotatingFileHandler',
@@ -303,7 +303,7 @@ LOGGING = {
             'maxBytes': 1024*1024*5, # 5 MB
             'backupCount': 5,
             'formatter':'standard',
-        },        
+        },
     },
     'loggers': {
         'lrs': {
@@ -320,6 +320,6 @@ LOGGING = {
             'handlers': ['celery_handler'],
             'level': 'DEBUG',
             'propagate': True
-        },   
+        },
     }
 }
