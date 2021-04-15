@@ -20,7 +20,7 @@ def setup_lrs():
     if not cwd in sys.path:
         sys.path.append(cwd)
 
-    env_dir = os.path.join(cwd, '../env/lib/python3.9/site-packages')
+    env_dir = os.path.join(cwd, '../env/lib/python2.7/site-packages')
     if not env_dir in sys.path:
         sys.path.append(env_dir)
 
